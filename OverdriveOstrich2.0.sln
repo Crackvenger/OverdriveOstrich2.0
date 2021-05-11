@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OverdriveOstrich2.0", "OverdriveOstrich2.0\OverdriveOstrich2.0.vbproj", "{5138D14F-A86B-430F-A8BC-DC5556DF500B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5138D14F-A86B-430F-A8BC-DC5556DF500B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5138D14F-A86B-430F-A8BC-DC5556DF500B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5138D14F-A86B-430F-A8BC-DC5556DF500B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5138D14F-A86B-430F-A8BC-DC5556DF500B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB297863-4A04-4E0C-9C31-3C20B520663F}
+	EndGlobalSection
+EndGlobal
