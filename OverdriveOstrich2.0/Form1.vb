@@ -42,6 +42,52 @@ Public Class Form1
         Head = Nothing
     End Sub
 
+    Sub Blit(ByVal MaskSub As Bitmap, ByVal Sprite As Bitmap, ByVal bcg As Bitmap, ByVal x As Integer, ByVal y As Integer)
+        Dim spriteColor As Color
+        Dim black As Color = Color.Black
+        Dim CounterX = 0
+        Dim CounterY = 0
+        Dim PositionX = 0
+        Dim PositionY = 0
+
+        For i = Rect.Top To Rect.Bottom - 1
+            For j = Rect.Left To Rect.Right - 1
+                spriteColor = MaskSub.GetPixel(x, y)
+                If spriteColor.ToArgb = black.ToArgb Then
+                    PositionX = CounterX + x
+                    PositionY = CounterY + y
+                    If ((PositionX & PositionY >= 0) And (PositionX < bmp.Width) And (PositionY < bmp.Height)) Then
+                        bmp.SetPixel(PositionX, PositionY, spriteColor)
+                    End If
+                End If
+                CounterX += 1
+            Next
+            CounterX = 0
+            CounterY += 1
+        Next
+        CounterX = 0
+        CounterY = 0
+        PositionX = 0
+        PositionY = 0
+
+        For i = Rect.Top To Rect.Bottom - 1
+            For j = Rect.Left To Rect.Right - 1
+                spriteColor = MaskSub.GetPixel(x, y)
+                If spriteColor.ToArgb <> black.ToArgb Then
+                    PositionX = CounterX + x
+                    PositionY = CounterY + y
+                    If ((PositionX & PositionY >= 0) And (PositionX < bmp.Width) And (PositionY < bmp.Height)) Then
+                        bmp.SetPixel(PositionX, PositionY, spriteColor)
+                    End If
+                End If
+                CounterX += 1
+            Next
+            CounterX = 0
+            CounterY += 1
+        Next
+
+    End Sub
+
     Sub BlitFlip(ByVal MaskSub As Bitmap, ByVal Sprite As Bitmap, ByVal bcg As Bitmap, ByVal x As Integer, ByVal y As Integer)
         Dim spriteColor As Color
         Dim black As Color = Color.Black
@@ -69,6 +115,22 @@ Public Class Form1
         CounterY = 0
         PositionX = 0
         PositionY = 0
+
+        For i = Rect.Top To Rect.Bottom - 1
+            For j = Rect.Right To Rect.Left Step -1
+                spriteColor = MaskSub.GetPixel(x, y)
+                If spriteColor.ToArgb <> black.ToArgb Then
+                    PositionX = CounterX + x
+                    PositionY = CounterY + y
+                    If ((PositionX & PositionY >= 0) And (PositionX < bmp.Width) And (PositionY < bmp.Height)) Then
+                        bmp.SetPixel(PositionX, PositionY, spriteColor)
+                    End If
+                End If
+                CounterX += 1
+            Next
+            CounterX = 0
+            CounterY += 1
+        Next
     End Sub
 
     Sub alter(ByVal Cur_State)
