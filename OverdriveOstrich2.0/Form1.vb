@@ -209,5 +209,24 @@ Public Class Form1
 
         GTimer.Enabled = True
     End Sub
-
-End Class
+    Sub leap()
+    ElseIf sprite.CurrentState = TStateOverdriveOstrich.leap Then
+        If Direction = "right" Then
+            BitBlittingFlip(MaskSS, SpritSheet, background, sprite.posX, sprite.posY)
+            If sprite.posX <= backgroundX And sprite.FrameIndex >= 2 Then
+                sprite.posX += sprite.Vx
+            End If
+        ElseIf Direction = "left" Then
+            BitBlitting(MaskSS, SpritSheet, background, sprite.posX, sprite.posY)
+            If sprite.posX >= backgroundX And sprite.FrameIndex >= 2 Then
+                sprite.posX += sprite.Vx
+            End If
+        End If
+        If sprite.posY > 30 And sprite.FrameIndex >= 2 And sprite.FrameIndex < 6 Then
+            sprite.posY += sprite.Vy
+        ElseIf sprite.posY < 145 And sprite.FrameIndex >= 6 Then
+            sprite.posY -= sprite.Vy
+        End If
+    End If
+    End Sub
+End Cass
